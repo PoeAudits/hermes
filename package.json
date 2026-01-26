@@ -1,0 +1,31 @@
+{
+  "name": "hermes",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --watch src/gateway/index.ts",
+    "build": "bun build src/gateway/index.ts src/node/index.ts src/cli/index.ts --outdir dist --target node",
+    "start:gateway": "bun run bin/gateway.ts",
+    "start:node": "bun run bin/node.ts",
+    "cli": "bun run bin/cli.ts",
+    "cli:nodes": "bun run bin/cli.ts nodes",
+    "cli:status": "bun run bin/cli.ts status",
+    "cli:run": "bun run bin/cli.ts run",
+    "cli:pair": "bun run bin/cli.ts pair",
+    "cli:unpair": "bun run bin/cli.ts unpair",
+    "cli:pending": "bun run bin/cli.ts pending",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "test:integration": "bun test src/cli/integration.test.ts"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.10.0",
+    "@types/ws": "^8.5.13",
+    "typescript": "^5.7.2"
+  }
+}
